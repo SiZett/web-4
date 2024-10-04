@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <input type="text" id="firstName" placeholder="Имя"></p>
+  <input type="text" id="lastName" placeholder="Фамилия"></p>
+  <button onclick="greet()">Отправить</button>
+  <p class="result">Ответ:
+  <p id="greeting"></p>
+
+  <script>
+    function greet() {
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+const resultElement = document.querySelector(".result");
+      if (firstName.trim() !== "" || lastName.trim() !== "") {
+        resultElement.textContent = `Ответ: Здравствуйте, ${firstName} ${lastName}!`;
+      } else {
+        document.getElementById("greeting").innerText = "";
+      }
+    }
+  </script>
+
+</body>
+</html>

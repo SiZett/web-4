@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <p>Выберите товары: </p>
+  <input type="checkbox" id="Choice1" name="food" value="120">
+  <label for="Choice1">Товар 1 - 120 рублей</label><br>
+  <input type="checkbox" id="Choice2" name="food" value="80">
+  <label for="Choice2">Товар 2 - 80 рублей</label><br>
+  <input type="checkbox" id="Choice3" name="food" value="180">
+  <label for="Choice3">Товар 3 - 180 рублей</label><br>
+
+  <button class="btn">Выбрать</button>
+
+  <p class="result">Общая стоимость: </p>
+
+  <script>
+    const btnElement = document.querySelector(".btn");
+    const resultElement = document.querySelector(".result");
+    const radioButtons = document.querySelectorAll('[name="food"]');
+
+    btnElement.addEventListener("click", function() {
+      let total = 0; 
+      for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
+          total += parseInt(radioButton.value); 
+        }
+      }
+      resultElement.textContent = `Общая стоимость: ${total} рублей`;
+    });
+  </script>
+
+</body>
+</html>
